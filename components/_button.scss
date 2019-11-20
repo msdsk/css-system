@@ -1,0 +1,66 @@
+button,
+.btn {
+  cursor: pointer;
+}
+
+.btn {
+  background-color: $secondary;
+  color: $primary;
+  padding: .7em 1em;
+  border-radius: $border-radius;
+  min-width: 15em;
+  transition: background-color .2s, color .2s;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background-color: lighten($secondary, 20%);
+  }
+
+  &[disabled] {
+    color: #fff;
+    pointer-events: none;
+    background: desaturate($secondary, 100%);
+  }
+}
+
+.btn {
+  &--sec {
+    background-color: #fff;
+    color: $primary;
+    border: $primary;
+    transition: background-color .2s, color .2s, opacity .2s;
+
+    &[disabled] {
+      color: desaturate($secondary, 100%);
+      pointer-events: none;
+      background: #fff;
+    }
+
+    &:hover {
+      background-color: #fff;
+      opacity: .5;
+    }
+  }
+}
+
+.btn {
+  &--ghost {
+    background-color: transparent;
+    color: $primary;
+    border: $primary;
+    transition: background-color .2s, color .2s, opacity .2s;
+
+    &[disabled] {
+      color: desaturate($secondary, 100%);
+      border-color: desaturate($secondary, 100%);
+      pointer-events: none;
+    }
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}

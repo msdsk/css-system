@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  border: none;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  background: transparent;
+  box-shadow: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+hr {
+  border-bottom: 1px solid;
+}
+
+::placeholder {
+  color: #000;
+  opacity: .5;
+}
+
+.a {
+  text-decoration: underline;
+}
+
+.white-text {
+
+  &::placeholder,
+  & ::placeholder {
+    color: #fff;
+    opacity: .5;
+  }
+}
+
+.link-simple {
+  text-decoration: none;
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: .5;
+  }
+}
