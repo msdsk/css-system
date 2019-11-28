@@ -1,6 +1,6 @@
 {
   "name": "css-system",
-  "version": "0.0.3",
+  "version": "0.0.3a",
   "description": "(S)CSS scaffolding for new projects",
   "main": "index.scss",
   "scripts": {
