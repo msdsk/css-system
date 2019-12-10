@@ -1,4 +1,6 @@
 /*
+# Layout
+
 ## Creating margin and padding helper classes
 
 This function creates an array of padding and margin classes, such as `.margin-top-small{ margin-top: 1em; }` or `.padding-left-big{ padding-left: 3em }`. Use them as utility classes where applicable, preferably instead of redefining those spacings in custom components.

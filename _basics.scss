@@ -1,3 +1,10 @@
+/*
+# Basics
+Styles that don't deserve their own components, basic elements and modifiers
+
+## Basic style reset
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +17,10 @@
   box-shadow: none;
 }
 
+/*
+## Basic elements
+*/
+
 img,
 svg {
   max-width: 100%;
@@ -20,13 +31,14 @@ hr {
   border-bottom: 1px solid;
 }
 
+/*
+## Placeholders
+*/
+
 ::placeholder {
   color: #000;
+  color: currentColor;
   opacity: .5;
-}
-
-.a {
-  text-decoration: underline;
 }
 
 .white-text {
@@ -34,8 +46,13 @@ hr {
   &::placeholder,
   & ::placeholder {
     color: #fff;
+    color: currentColor;
     opacity: .5;
   }
+}
+
+.a {
+  text-decoration: underline;
 }
 
 .link-simple {
@@ -45,4 +62,8 @@ hr {
   &:hover {
     opacity: .5;
   }
+}
+
+.bordered {
+  border: 1px solid;
 }
