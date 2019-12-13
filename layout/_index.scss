@@ -1,0 +1,212 @@
+/*
+# Layout
+
+## Grid
+
+To use IE compliant grid change the following import to `@import 'ie_grid';`
+*/
+
+@import 'grid';
+
+/*
+## Creating margin and padding helper classes
+
+This function creates an array of padding and margin classes, such as `.margin-top-small{ margin-top: 1em; }` or `.padding-left-big{ padding-left: 3em }`. Use them as utility classes where applicable, preferably instead of redefining those spacings in custom components.
+
+```example
+{% set modifiers = ['-negative', '-text', '-small', '', '-big', '-bigger'] %}
+{% for modifier in modifiers %}
+  <div class="margin-bottom flex flex--v-center">
+    <div class="primary white-text container-small test-object margin-right{{modifier}}">.margin-right{{modifier}}</div>
+    <div class="secondary container-small test-object" style="height: 80%"></div>
+  </div>
+{% endfor %}
+```
+*/
+
+$directions: (top, right, bottom, left);
+$sizes: ('-negative'(-$gap), '-text'.3em, '-small'1em, ''$gap, '-big'3em, '-bigger'6em);
+
+@each $direction in $directions {
+  @each $size in $sizes {
+    .margin-#{$direction}#{unquote(nth($size, 1))} {
+      margin-#{$direction}: #{nth($size, 2)}
+    }
+
+    .padding-#{$direction}#{unquote(nth($size, 1))} {
+      padding-#{$direction}: #{nth($size, 2)}
+    }
+  }
+}
+
+/*
+## Center container
+
+Standard container used for centering layout, coming in 3 sizes, `.centr-width` that defaults to big screen breakpoint, `.center-width.center-width--medium` that is 2/3rds of it and `.center-width.center-width--small` that is half of it. You usually want to use it with `.container` class
+
+```example
+<div class="primary white-text container center-width center-width--small">.center-width.center-width--small</div>
+```
+*/
+
+.center-width {
+  max-width: $lg;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--medium {
+    max-width: $lg * 2 / 3;
+  }
+
+  &--small {
+    max-width: $lg / 2;
+  }
+}
+
+/*
+## Container
+
+For padding of content.
+
+```example
+<div class="text-object primary white-text container"><div class="secondary">.container</div></div>
+
+<div class="text-object primary white-text container-small margin-top"><div class="secondary">.container-small</div></div>
+```
+*/
+
+.container {
+  padding: $gap 2 * $gap;
+
+  @media (max-width: $md) {
+    padding: $gap / 2 $gap;
+  }
+}
+
+.container-small {
+  padding: 1em;
+}
+
+/*
+## Flex containers with helper functions
+
+```example
+.flex.flex--v-center
+<div class="flex flex--v-center">
+  <div class="container-small test-object primary"></div>
+  <div class="container test-object secondary"></div>
+</div>
+
+<hr class="margin-bottom margin-top">
+
+.flex.flex--h-center
+<div class="flex flex--h-center">
+  <div class="container-small test-object primary"></div>
+  <div class="container test-object secondary"></div>
+</div>
+
+<hr class="margin-bottom margin-top">
+
+.flex.flex--apart
+<div class="flex flex--apart">
+  <div class="container-small test-object primary"></div>
+  <div class="container test-object secondary"></div>
+</div>
+
+<hr class="margin-bottom margin-top">
+
+.flex.flex--right
+<div class="flex flex--right">
+  <div class="container-small test-object primary"></div>
+  <div class="container test-object secondary"></div>
+</div>
+
+<hr class="margin-bottom margin-top">
+
+.flex.flex--column.flex--v-center
+<div class="flex flex--column flex--v-center">
+  <div class="container-small primary" style="width:15em"></div>
+  <div class="container test-object secondary"></div>
+</div>
+```
+*/
+
+.flex {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--apart {
+    justify-content: space-between;
+  }
+
+  &--h-center {
+    justify-content: center;
+  }
+
+  &--v-center {
+    align-items: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+}
+
+/*
+## Toolstrip
+
+Container used mostly for grouping buttons or icons. For positioningof elements use flex container modifier classes such as `.flex--right`.
+
+```example
+<div class="toolstrip toolstrip--no-margin flex--right">
+  <button class="btn">
+    Item one
+  </button>
+
+  <button class="btn">
+    Item one
+  </button>
+</div>
+```
+*/
+
+.toolstrip {
+  display: flex;
+
+  &--no-margin {
+    margin: -1em;
+  }
+
+  &>* {
+    margin: 1em;
+  }
+}
+
+/*
+## Modifier classes
+
+### Display classes
+*/
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/*
+### Modifier classes
+*/
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}

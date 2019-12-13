@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(#{$columns}, 1fr);
+  gap: $gap;
+
+  @media (max-width: $md) {
+    gap: $gap / 2;
+  }
+}
+
+.col {
+  grid-column: span 12;
+}
+
+@each $breakpoint in $breakpoints {
+
+  @media (min-width: nth($breakpoint, 2)) {
+
+    @for $i from 1 to $columns+1 {
+      .col--#{nth($breakpoint, 1)}-#{$i} {
+        display: block;
+        grid-column: span #{$i};
+      }
+    }
+
+    .col--#{nth($breakpoint, 1)}-0 {
+      display: none;
+    }
+  }
+}

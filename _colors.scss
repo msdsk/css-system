@@ -14,14 +14,14 @@ Function that generates background and text colors
   {% for modifier in modifiers %}
     {% for color in colors %}
       <div class="col col--md-3">
-        <div class="small-container full-height {{oppositeColors[loop.index0]}}-text {{color}}{{modifier}}">.{{color}}{{modifier}}</div>
+        <div class="container-small full-height {{oppositeColors[loop.index0]}}-text {{color}}{{modifier}}">.{{color}}{{modifier}}</div>
       </div>
     {% endfor %}
   {% endfor %}
 
   {% for color in colors %}
     <div class="col col--md-3">
-      <div class="small-container full-height {{oppositeColors[loop.index0]}} {{color}}-text{{modifier}}">.{{color}}-text{{modifier}}</div>
+      <div class="container-small full-height {{oppositeColors[loop.index0]}} {{color}}-text{{modifier}}">.{{color}}-text{{modifier}}</div>
     </div>
   {% endfor %}
 </div>
