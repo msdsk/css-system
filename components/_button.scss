@@ -6,7 +6,7 @@ button,
 .btn {
   background-color: $secondary;
   color: $primary;
-  padding: .7em 1em;
+  padding: $input-padding;
   border-radius: $border-radius;
   min-width: 15em;
   transition: background-color .2s, color .2s;

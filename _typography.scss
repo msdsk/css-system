@@ -1,11 +1,8 @@
 /*
 # Typography
 
-This system uses [Fluid typography](https://www.smashingmagazine.com/2016/05/fluid-typography/). To change font sizes please modify the following variables (values in px).
+This system uses [Fluid typography](https://www.smashingmagazine.com/2016/05/fluid-typography/).
 */
-
-$min-font-size: 16;
-$max-font-size: 23;
 
 html {
   font-family: $font-family;
@@ -23,6 +20,14 @@ html {
   html {
     font-size: 23px;
   }
+}
+
+/*
+## Font-family for code
+*/
+code,
+.code {
+  font-family: monospace;
 }
 
 /*
@@ -115,29 +120,30 @@ Be advised that using `.small` and `.big` will change not only text sizes, but a
 
 <hr class="margin-top margin-bottom">
 
-<div class="text-justified>
+<div class="text-justified">
   <h3>.text-justified</h3>
   <div>Parturient parturient a mollis vulputate himenaeos consectetur vestibulum phasellus gravida quam iaculis aenean suspendisse parturient metus odio taciti parturient hac ac a aliquam class quis a.</div>
 </div>
 
 <hr class="margin-top margin-bottom">
 
-<div class="text-right>
+<div class="text-right">
   <h3>.text-right</h3>
   <div>Parturient parturient a mollis vulputate himenaeos consectetur vestibulum phasellus gravida quam iaculis aenean suspendisse parturient metus odio taciti parturient hac ac a aliquam class quis a.</div>
 </div>
 
 <hr class="margin-top margin-bottom">
 
-<div class="text-left>
+<div class="text-left">
   <h3>.text-left</h3>
   <div>Parturient parturient a mollis vulputate himenaeos consectetur vestibulum phasellus gravida quam iaculis aenean suspendisse parturient metus odio taciti parturient hac ac a aliquam class quis a.</div>
 </div>
 
 <hr class="margin-top margin-bottom">
 
-<span class="b">b, .b or .bold</span>
-<span class="b">b, .b or .bold</span>
+<span class="b">b, .b or .bold</span>;
+<span class="i">i, .i or .italic</span>;
+<span class="shadow-text white-text">.shadow-text</span>
 
 ```
 */

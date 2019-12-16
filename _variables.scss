@@ -1,27 +1,61 @@
+/*
+# Variables
+
+The easiest way to restyle the system is by changing following variables.
+
+## Colors
+*/
+
 $primary: #4661D2;
 $secondary: #2CE6B7;
 $black: #000;
 $white: #fff;
+
+/*
+If you add more colors than primary/secondary, please also update the following so they will generate text/background classes.
+*/
 
 $colors: ("primary" : $primary,
   "secondary" : $secondary,
   "black" : $black,
   "white" : $white);
 
+/*
+## Font
 
-$font-family: sans-serif;
+This system uses [Fluid typography](https://www.smashingmagazine.com/2016/05/fluid-typography/).
+Check [typography](/typography) section to see how it is calculated.
+*/
+$font-family: 'Open Sans',
+sans-serif;
+$min-font-size: 16;
+$max-font-size: 23;
 
+/*
+## Grid
+
+Basic grid metrics. Note that some paddings are based on gap size.
+*/
 $columns: 12;
 $gap: 1rem;
 $gap-sm: .75em;
-$header-height: 6rem;
-$header-height-mobile: 8rem;
 
+/*
+## Breakpoints
+
+You can change the metrics to pixels if you really want but I would adivse against it.
+If you add more breakpoints, don't forget to add it to the following list so it will generate related grid items.
+*/
 $md: 40rem;
 $lg: 70rem;
 $breakpoints: (sm 0em $md $gap-sm,
   md $md $lg $gap,
   lg $lg 100vh $gap);
+
+/*
+## Minor helper variables
+Use those to assure that metrics will be more or less consistent across the board.
+*/
 
 $border-radius: .3em;
 $box-shadow: 0 .3em .7em rgba(0, 0, 0, .4);
