@@ -1,0 +1,44 @@
+/*
+# Forms
+
+## Basic input
+
+```example
+<label class="input">
+  <input class="input__element"/>
+  <div class="input__label">Name and surname</div>
+</label>
+```
+*/
+.input {
+  &__element {
+    padding: $input-padding;
+    border-bottom: 2px solid;
+    transition: border-color .2s;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-color: $secondary;
+    }
+
+    &+.label {
+      margin-top: .3em;
+    }
+  }
+
+  &:hover>&__label,
+  &__element:focus+&__label {
+    color: $secondary
+  }
+
+  &__label {
+    display: block;
+    transition: color .2s;
+  }
+}
+
+
+.error {
+  color: #c53623;
+}
