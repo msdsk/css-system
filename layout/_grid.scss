@@ -1,30 +1,55 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(#{$columns}, 1fr);
-  gap: $gap;
+/*
+# Grid
 
-  @media (max-width: $md) {
-    gap: $gap / 2;
-  }
+The default grid is based on 12 columns. Use it by declaring `.grid` container. Within it use `.col.col--[breakpoint]-[column span]` elements. If you use just .col it defaults to full width element.
+Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for larger ones, unless specifically overriden.
+```example
+
+<div class="grid">
+  <div class="primary container-small col col--sm-2">.col.col--sm-2</div>
+  <div class="primary container-small col col--sm-3">.col.col--sm-3</div>
+  <div class="primary container-small col col--sm-1 col--lg-7">.col.col--sm-1.col--lg-8</div>
+  <div class="primary container-small col">.col</div>
+  <div class="primary container-small col col--lg-10">.col.col--lg-10</div>
+  <div class="primary container-small col col--lg-2">.col.col--lg-2</div>
+</div>
+
+```
+*/
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$gap / 2;
 }
 
 .col {
-  grid-column: span 12;
+  width: 100%;
+  margin: #{$gap / 2} 0;
 }
 
+@media (max-width: $md) {
+  .col {
+    margin: #{$gap-sm / 2} 0;
+  }
+}
+
+
 @each $breakpoint in $breakpoints {
+  $gutter: nth($breakpoint, 4);
 
   @media (min-width: nth($breakpoint, 2)) {
 
     @for $i from 1 to $columns+1 {
       .col--#{nth($breakpoint, 1)}-#{$i} {
-        display: block;
-        grid-column: span #{$i};
+        width: calc(#{(100 * $i) / $columns}% - #{$gutter} - 1px);
+        margin: #{$gutter / 2};
       }
     }
 
     .col--#{nth($breakpoint, 1)}-0 {
-      display: none;
+      width: 0;
+      margin: #{$gutter} 0 !important;
     }
   }
 }

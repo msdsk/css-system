@@ -12,15 +12,16 @@ $colors: ("primary" : $primary,
 $font-family: sans-serif;
 
 $columns: 12;
-$gap: 1.7rem;
+$gap: 1rem;
+$gap-sm: .75em;
 $header-height: 6rem;
 $header-height-mobile: 8rem;
 
 $md: 40rem;
-$lg: 60rem;
-$breakpoints: (sm 0em $md,
-  md $md $lg,
-  lg $lg 100vh);
+$lg: 70rem;
+$breakpoints: (sm 0em $md $gap-sm,
+  md $md $lg $gap,
+  lg $lg 100vh $gap);
 
 $border-radius: .3em;
 $box-shadow: 0 .3em .7em rgba(0, 0, 0, .4);
