@@ -1,0 +1,58 @@
+/*
+# Card
+
+```example
+<div class="container">
+  <div class="card">
+    <div class="card__image" style="background-image: url('https://images.unsplash.com/photo-1576492979330-562be19a36bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')">
+      <div class="card__title">This is a short title</div>
+    </div>
+    <div class="card__body">
+      <div class="h3">This is card's text</div>
+      <p>Parturient parturient a mollis vulputate himenaeos consectetur vestibulum phasellus gravida quam iaculis aenean suspendisse parturient metus odio taciti parturient hac ac a aliquam class quis a.</p>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.card {
+  border-radius: $border-radius;
+  background-color: $white;
+  box-shadow: $box-shadow;
+
+  &>:first-child {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &>:last-child {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+
+  &__image {
+    padding-bottom: 50%;
+    position: relative;
+    background: 50% 50% / cover;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: bold;
+    position: absolute;
+    top: $gap;
+    bottom: $gap;
+    left: $gap;
+    right: $gap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 3px #000;
+  }
+
+  &__body {
+    padding: $gap;
+  }
+}
