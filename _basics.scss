@@ -51,18 +51,39 @@ hr {
   }
 }
 
+/*
+## Links
+
+```example
+<div class="a">a or .a</div>
+<a href="#" class="link-simple">a.link-simple</a>
+```
+*/
+
+a,
 .a {
   text-decoration: underline;
+  color: $secondary;
+  cursor: pointer;
 }
 
 .link-simple {
   text-decoration: none;
+  color: inherit;
+}
+
+.a,
+.link-simple {
   transition: opacity .2s;
 
   &:hover {
     opacity: .5;
   }
 }
+
+/*
+## Basic modifiers
+*/
 
 .bordered {
   border: 1px solid;
