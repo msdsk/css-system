@@ -10,6 +10,12 @@
     <div class="card__body">
       <div class="h3">This is card's text</div>
       <p>Parturient parturient a mollis vulputate himenaeos consectetur vestibulum phasellus gravida quam iaculis aenean suspendisse parturient metus odio taciti parturient hac ac a aliquam class quis a.</p>
+      <div class="margin-top">
+        <div class="toolstrip toolstrip--no-margin flex--right small">
+          <button class="btn btn--sec">Card action 1</button>
+          <button class="btn">Card action 2</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

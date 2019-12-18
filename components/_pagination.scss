@@ -1,0 +1,52 @@
+/*
+# Pagination
+
+```example
+<div class="pagination">
+  <button class="pagination__item pagination__first">⯬</button>
+  <button class="pagination__item pagination__item--active">1</button>
+  <button class="pagination__item">2</button>
+  <button class="pagination__item pagination__last">⯮</button>
+</div>
+```
+*/
+
+.pagination {
+  display: flex;
+  margin-top: 2em;
+
+  &__item {
+    width: 2em;
+    height: 2em;
+    background: $white;
+    border: 2px solid;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $secondary;
+    transition: background-color .2s;
+
+    &--active {
+      color: $white;
+      background: $secondary;
+      border-color: $secondary;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: lighten($secondary, 30);
+    }
+  }
+
+  &__first {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  &__last {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    border-right: 2px solid;
+  }
+}

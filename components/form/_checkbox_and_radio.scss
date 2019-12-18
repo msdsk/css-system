@@ -1,0 +1,68 @@
+/*
+# Checkboxes and radios
+
+```example
+<label class="checkbox">
+  <input type="checkbox" value="1" class="checkbox__input" />
+  <div class="checkbox__label">Checkbox label 1</div>
+</label>
+<label class="checkbox">
+  <input type="checkbox" value="2" class="checkbox__input" />
+  <div class="checkbox__label">Checkbox label 2</div>
+</label>
+
+<div>
+  <label class="radio">
+    <input type="radio" name="radio" value="1" class="radio__input" />
+    <div class="radio__label">Radio label 1</div>
+  </label>
+  <label class="radio">
+    <input type="radio" name="radio" value="2" class="radio__input" />
+    <div class="radio__label">Radio label 2</div>
+  </label>
+</div>
+```
+*/
+.checkbox,
+.radio {
+  display: block;
+  position: relative;
+  margin: 1em 0;
+
+  &__input {
+    position: absolute;
+    left: -1000em;
+    width: 0;
+    height: 0;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1.3em;
+      height: 1.3em;
+      background: $white;
+      border: 2px solid $secondary;
+      margin-right: .5em;
+      transition: background-color .2s, box-shadow .2s;
+    }
+  }
+
+  &__input:checked+&__label::before {
+    background: $secondary;
+    box-shadow: inset 0 0 0 .1em #fff;
+  }
+}
+
+.radio {
+  &__label {
+    &::before {
+      border-radius: 50%;
+    }
+  }
+}
