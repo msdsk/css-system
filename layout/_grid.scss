@@ -2,7 +2,7 @@
 # Grid
 
 The default grid is based on 12 columns. Use it by declaring `.grid` container. Within it use `.col.col--[breakpoint]-[column span]` elements. If you use just .col it defaults to full width element.
-Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for larger ones, unless specifically overriden.
+Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for larger ones, unless specifically overriden. Breakpoints are defined in [variables](/variables).
 ```example
 
 <div class="grid">

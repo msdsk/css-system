@@ -1,0 +1,78 @@
+/*
+# Popup
+
+```example
+<div class="popup" id="popup">
+  <div class="popup__body">
+    <div class="popup__content">
+      <h3 class="margin-bottom"> This is a popup</h3>
+      <img src="https://images.unsplash.com/photo-1577500179011-18457a4d3ddf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+      <div class="toolstrip flex--right toolstrip--no-margin">
+        <button class="btn" id="hide">Hide</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="btn" id="show">Show popup</button>
+<script>
+  let btnShow = document.getElementById("show"),
+    btnHide = document.getElementById("hide"),
+    popup = document.getElementById("popup")
+
+  btnShow.addEventListener("click", ()=>{
+    popup.classList.add("popup--visible")
+  })
+  btnHide.addEventListener("click", ()=>{
+    popup.classList.remove("popup--visible")
+  })
+</script>
+```
+*/
+
+.popup {
+  transition: background-color .6s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 3000;
+  padding: $gap;
+
+  &__body {
+    border-radius: $border-radius;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    padding: $gap;
+    transition: transform .3s ease-in-out;
+    transform: scale(0, 0);
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  &__content {
+    transition: opacity .2s;
+    opacity: 0;
+  }
+
+  &--visible {
+    background: transparentize($black, .5);
+    transition: background-color .3s;
+    pointer-events: all;
+
+    .popup__body {
+      transition: transform .3s;
+      transform: scale(1, 1);
+    }
+
+    .popup__content {
+      transition: opacity .3s .2s;
+      opacity: 1;
+    }
+  }
+
+}
