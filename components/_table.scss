@@ -1,0 +1,103 @@
+/*
+# Tables
+
+Tip: For `number-cell` class, if the font you're using doesn't support tabular lining numbers, change `font-feature-settings: 'tnum'` to `font-family: monospace`.
+
+```example
+<table>
+ <caption>A complex table</caption>
+ <thead>
+  <tr>
+   <th colspan="3">Invoice #123456789</th>
+   <th>14 January 2025
+  </tr>
+  <tr>
+   <td colspan="2">
+    <strong>Pay to:</strong><br>
+    Acme Billing Co.<br>
+    123 Main St.<br>
+    Cityville, NA 12345
+   </td>
+   <td colspan="2">
+    <strong>Customer:</strong><br>
+    John Smith<br>
+    321 Willow Way<br>
+    Southeast Northwestershire, MA 54321
+   </td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th>Name / Description</th>
+   <th class="number-cell">Qty.</th>
+   <th class="number-cell">@</th>
+   <th class="number-cell">Cost</th>
+  </tr>
+  <tr>
+   <td>Paperclips</td>
+   <td class="number-cell">1000</td>
+   <td class="number-cell">0.01</td>
+   <td class="number-cell">10.00</td>
+  </tr>
+  <tr>
+   <td>Staples (box)</td>
+   <td class="number-cell">100</td>
+   <td class="number-cell">1.00</td>
+   <td class="number-cell">100.00</td>
+  </tr>
+ </tbody>
+ <tfoot>
+  <tr>
+   <th colspan="3">Subtotal</th>
+   <td class="number-cell"> 110.00</td>
+  </tr>
+  <tr>
+   <th colspan="2">Tax</th>
+   <td class="number-cell"> 8% </td>
+   <td class="number-cell">8.80</td>
+  </tr>
+  <tr>
+   <th colspan="3">Grand Total</th>
+   <td class="number-cell">$ 118.80</td>
+  </tr>
+ </tfoot>
+</table>
+```
+
+*/
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  caption {
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2em;
+  }
+}
+
+td,
+th {
+  padding: .5em;
+  border: 1px solid;
+  text-align: left;
+}
+
+thead {
+  border-bottom: 3px solid;
+}
+
+th {
+  font-weight: bold;
+}
+
+tfoot {
+  border-top: 3px solid;
+}
+
+.number-cell {
+  text-align: right;
+  font-feature-settings: 'tnum';
+}
