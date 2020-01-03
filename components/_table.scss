@@ -101,3 +101,55 @@ tfoot {
   text-align: right;
   font-feature-settings: 'tnum';
 }
+
+/*
+## Stripped table
+
+```example
+<table class="stripped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Subtype</th>
+      <th>Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">Big</td>
+      <td>Chungus</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Lad</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>Boi</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Small</td>
+      <td>Pupper</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+.stripped {
+
+  td,
+  th {
+    border: none;
+  }
+
+  tr:nth-child(2n) {
+
+    td,
+    th {
+      background-color: #ddd;
+    }
+  }
+}

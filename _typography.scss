@@ -71,6 +71,81 @@ h6,
 }
 
 /*
+## Lists
+
+```example
+
+<h3>Default lists</h3>
+<div class="grid">
+  <div class="col col--md-6">
+    <ul>
+      <li>Chungus
+        <ul>
+          <li>Oh lawd</li>
+          <li>He comin'</li>
+        </ul>
+      </li>
+      <li>Chonk</li>
+      <li>Boi</li>
+      <li>Speedy boi</li>
+    </ul>
+  </div>
+  <div class="col col--md-6">
+    <ol>
+      <li>Chungus
+        <ol>
+          <li>Oh lawd</li>
+          <li>He comin'</li>
+        </ol>
+      </li>
+      <li>Chonk</li>
+      <li>Boi</li>
+      <li>Speedy boi</li>
+    </ol>
+  </div>
+</div>
+
+<h3 class="margin-top">.list-simple</h3>
+<ol class="list-simple">
+  <li>Just a list</li>
+  <li>With semantics but nothing more</li>
+</ol>
+
+*/
+
+ul {
+  margin-left: 1em;
+}
+
+ol {
+  counter-reset: section;
+  list-style-type: none;
+
+  ol {
+    margin-left: 1em;
+  }
+
+  li {
+
+    &:before {
+      counter-increment: section;
+      content: counters(section, ".")". ";
+      font-feature-settings: 'tnum';
+    }
+  }
+}
+
+.list-simple {
+  margin-left: 0;
+  list-style: none;
+  counter-reset: none;
+
+  li:before {
+    content: none;
+  }
+}
+
+/*
 ## Sizings
 
 Be advised that using `.small` and `.big` will change not only text sizes, but also other metrics, as they often are based on `em` sizes. If you need to change only font size you might need to wrap the text in a `<span>` element.
