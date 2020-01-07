@@ -1,10 +1,11 @@
 {
   "name": "css-system",
-  "version": "0.0.4",
+  "version": "1.0.0b",
   "description": "(S)CSS scaffolding for new projects",
   "main": "index.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "curl -X POST -d {} ${CSS_PUBLISH_URL}"
   },
   "repository": {
     "type": "git",
