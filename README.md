@@ -40,7 +40,7 @@ alert('It\'s working!')
 */
 ~~~~
 
-Please, make sure that comments are in line with your changes.
+Please, make sure that comments are in line with your changes. For images you can use `<img src="/image.jpg">`.
 
 ### Updating the style guide
 
