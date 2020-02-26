@@ -1,6 +1,6 @@
 {
-  "name": "css-system",
-  "version": "1.0.1",
+  "name": "scaffold-css",
+  "version": "1.0.2",
   "description": "(S)CSS scaffolding for new projects",
   "main": "index.scss",
   "scripts": {
@@ -15,6 +15,5 @@
   "bugs": {
     "url": "https://github.com/ThisisDeploy/css-system/issues"
   },
-  "homepage": "https://github.com/ThisisDeploy/css-system#readme",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@ThisisDeploy" }
+  "homepage": "https://github.com/ThisisDeploy/css-system#readme"
 }

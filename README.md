@@ -4,12 +4,11 @@ This is an scss starter for new project with most common components and classes 
 
 ## Usage
 
-You can download it and drop the files right into your project, modify them as needed. Handle it with the tool of your choice, like webpack, to compile it to `.css`, preferably minimizing it to drop th comments (for example with [cssnano](https://www.npmjs.com/package/cssnano-webpack-plugin)).
+To install the package, run `npm install scaffold-css`. Handle it with the tool of your choice, like webpack, to compile it to `.css`, preferably minimizing it to drop the comments (for example with [cssnano](https://www.npmjs.com/package/cssnano-webpack-plugin)). You can also just download the files directly from GitHub and drop them into your project, modifying as needed.
 
-1. Create at the root of your project `.npmrc` file with following content: ```registry=https://npm.pkg.github.com/thisisdeploy```
-2. Run `npm install -S @thisisdeploy/css-system`
+## Documentation
 
-Then handle it as appropriate within your front end workflow to process into `.css` files and consume them.
+The documentation for this CSS system can be viewed at <https://css-system-deploy.netlify.com/>
 
 ## Contributing
 
