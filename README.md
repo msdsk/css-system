@@ -6,6 +6,20 @@ This is an scss starter for new project with most common components and classes 
 
 To install the package, run `npm install @thisisdeploy/scaffold-css`. Handle it with the tool of your choice, like webpack, to compile it to `.css`, preferably minimizing it to drop the comments (for example with [cssnano](https://www.npmjs.com/package/cssnano-webpack-plugin)). You can also just download the files directly from GitHub and drop them into your project, modifying as needed.
 
+### Overriding variables in node-sass
+
+To override the variables file imported through node-sass from webpack, you can extend your node-sass as follows:
+
+```js
+importer(url, prev, done) {
+  if (url === 'variables') {
+	const scss = fs.readFileSync(path.join(__dirname, 'path/to/your/_variables.scss'), 'utf8')
+	return { contents: scss }
+  }
+  return null
+}
+```
+
 ## Documentation
 
 The documentation for this CSS system can be viewed at <https://css-system-deploy.netlify.com/>
