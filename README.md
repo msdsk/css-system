@@ -4,7 +4,7 @@ This is an scss starter for new project with most common components and classes 
 
 ## Usage
 
-To install the package, run `npm install scaffold-css`. Handle it with the tool of your choice, like webpack, to compile it to `.css`, preferably minimizing it to drop the comments (for example with [cssnano](https://www.npmjs.com/package/cssnano-webpack-plugin)). You can also just download the files directly from GitHub and drop them into your project, modifying as needed.
+To install the package, run `npm install @thisisdeploy/scaffold-css`. Handle it with the tool of your choice, like webpack, to compile it to `.css`, preferably minimizing it to drop the comments (for example with [cssnano](https://www.npmjs.com/package/cssnano-webpack-plugin)). You can also just download the files directly from GitHub and drop them into your project, modifying as needed.
 
 ## Documentation
 
