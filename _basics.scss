@@ -21,6 +21,15 @@ Styles that don't deserve their own components, basic elements and modifiers
 ## Basic elements
 */
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+}
+
 img,
 svg {
   max-width: 100%;
