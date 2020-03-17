@@ -68,6 +68,8 @@ For padding of content.
 <div class="text-object primary white-text container"><div class="secondary">.container</div></div>
 
 <div class="text-object primary white-text container-small margin-top"><div class="secondary">.container-small</div></div>
+
+<div class="text-object primary white-text container-big margin-top"><div class="secondary">.container-big</div></div>
 ```
 */
 
@@ -81,6 +83,10 @@ For padding of content.
 
 .container-small {
   padding: 1em;
+}
+
+.container-big {
+  padding: 4 * $gap 2 * $gap;
 }
 
 /*
