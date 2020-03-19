@@ -84,12 +84,10 @@ a,
 .link-simple {
   text-decoration: none;
   color: inherit;
-}
-
-.link-simple {
   transition: opacity .2s;
 
   &:hover {
+    color: inherit;
     opacity: .5;
   }
 }
