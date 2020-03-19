@@ -74,9 +74,9 @@ a,
   text-decoration: underline;
   color: $secondary;
   cursor: pointer;
+  transition: color .2s;
 
   &:hover {
-    transition: color .2s;
     color: adjust-hue($secondary, -30);
   }
 }
