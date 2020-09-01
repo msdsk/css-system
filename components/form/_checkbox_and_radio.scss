@@ -55,7 +55,7 @@
 
   &__input:checked+&__label::before {
     background: $secondary;
-    box-shadow: inset 0 0 0 .1em #fff;
+    box-shadow: inset 0 0 0 .1em $white;
   }
 }
 

@@ -46,7 +46,7 @@ hr {
 */
 
 ::placeholder {
-  color: #000;
+  color: $black;
   color: currentColor;
   opacity: .5;
 }
@@ -55,7 +55,7 @@ hr {
 
   &::placeholder,
   & ::placeholder {
-    color: #fff;
+    color: $white;
     color: currentColor;
     opacity: .5;
   }
