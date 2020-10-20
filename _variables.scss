@@ -9,6 +9,7 @@ The easiest way to restyle the system is by changing following variables.
 $primary: #4661D2;
 $secondary: #2CE6B7;
 $black: #000;
+$gray: #666;
 $white: #fff;
 
 /*
@@ -18,6 +19,7 @@ If you add more colors than primary/secondary, please also update the following 
 $colors: ("primary" : $primary,
   "secondary" : $secondary,
   "black" : $black,
+  "gray" : $gray,
   "white" : $white);
 
 /*
