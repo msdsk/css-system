@@ -6,33 +6,37 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 ```example
 
 <div class="grid">
-  <div class="primary container-small col col--sm-2">.col.col--sm-2</div>
-  <div class="primary container-small col col--sm-3">.col.col--sm-3</div>
-  <div class="primary container-small col col--sm-1 col--lg-7">.col.col--sm-1.col--lg-8</div>
-  <div class="primary container-small col">.col</div>
-  <div class="primary container-small col col--lg-10">.col.col--lg-10</div>
-  <div class="primary container-small col col--lg-2">.col.col--lg-2</div>
+  <div class="col col--sm-2"><div class="primary container-small">.col.col--sm-2</div></div>
+  <div class="col col--sm-3"><div class="primary container-small">.col.col--sm-3</div></div>
+  <div class="col col--sm-3 col--lg-7"><div class="primary container-small">.col.col--sm-1.col--lg-7</div></div>
+  <div class="col col--sm-4 col--lg-0"><div class="primary container-small">.col.col--sm-4.col--lg-0</div></div>
+  <div class="col"><div class="primary container-small">.col</div></div>
+  <div class="col col--lg-10"><div class="primary container-small">.col.col--lg-10</div></div>
+  <div class="col col--lg-2"><div class="primary container-small">.col.col--lg-2</div></div>
 </div>
 
 ```
 */
 
 .grid {
+  --padding: #{$gap-sm / 2};
   display: flex;
   flex-wrap: wrap;
-  margin: -$gap / 2;
+  margin: calc(-1 * var(--padding));
+  width: calc(100% + 2 * var(--padding));
+}
+
+@media (max-width: $md) {
+  .grid {
+    --padding: #{$gap-sm / 2};
+  }
 }
 
 .col {
   width: 100%;
-  margin: #{$gap / 2} 0;
+  padding: var(--padding);
 }
 
-@media (max-width: $md) {
-  .col {
-    margin: #{$gap-sm / 2} 0;
-  }
-}
 
 
 @each $breakpoint in $breakpoints {
@@ -42,14 +46,13 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 
     @for $i from 1 to $columns+1 {
       .col--#{nth($breakpoint, 1)}-#{$i} {
-        width: calc(#{(100 * $i) / $columns}% - #{$gutter} - 1px);
-        margin: #{$gutter / 2};
+        width: #{(100% * $i) / $columns};
       }
     }
 
     .col--#{nth($breakpoint, 1)}-0 {
       width: 0;
-      margin: #{$gutter} 0 !important;
+      padding: var(--padding) 0 !important;
     }
   }
 }
