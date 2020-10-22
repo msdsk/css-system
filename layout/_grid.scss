@@ -17,9 +17,16 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 
 ```
 */
+:root {
+  --gap: #{$gap};
+
+  @media (max-width: $md) {
+    --gap: #{$gap-sm};
+  }
+}
 
 .grid {
-  --padding: #{$gap-sm / 2};
+  --padding: #{$gap / 2};
   display: flex;
   flex-wrap: wrap;
   margin: calc(-1 * var(--padding));
