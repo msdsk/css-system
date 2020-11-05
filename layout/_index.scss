@@ -184,11 +184,11 @@ Container used mostly for grouping buttons or icons. For positioningof elements 
   display: flex;
 
   &--no-margin {
-    margin: -1em;
+    margin: -$gap/2;
   }
 
   &>* {
-    margin: 1em;
+    margin: $gap/2;
   }
 }
 
