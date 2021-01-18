@@ -8,7 +8,7 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 <div class="grid">
   <div class="col col--sm-2"><div class="primary container-small">.col.col--sm-2</div></div>
   <div class="col col--sm-3"><div class="primary container-small">.col.col--sm-3</div></div>
-  <div class="col col--sm-3 col--lg-7"><div class="primary container-small">.col.col--sm-1.col--lg-7</div></div>
+  <div class="col col--sm-3 col--lg-7"><div class="primary container-small">.col.col--sm-3.col--lg-7</div></div>
   <div class="col col--sm-4 col--lg-0"><div class="primary container-small">.col.col--sm-4.col--lg-0</div></div>
   <div class="col"><div class="primary container-small">.col</div></div>
   <div class="col col--lg-10"><div class="primary container-small">.col.col--lg-10</div></div>
@@ -51,15 +51,16 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 
   @media (min-width: nth($breakpoint, 2)) {
 
+    .col--#{nth($breakpoint, 1)}-0 {
+      display: none;
+    }
+
     @for $i from 1 to $columns+1 {
       .col--#{nth($breakpoint, 1)}-#{$i} {
         width: #{(100% * $i) / $columns};
+        padding: var(--padding);
+        display: block;
       }
-    }
-
-    .col--#{nth($breakpoint, 1)}-0 {
-      width: 0;
-      padding: var(--padding) 0 !important;
     }
   }
 }
