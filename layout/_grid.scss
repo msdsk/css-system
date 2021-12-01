@@ -17,6 +17,8 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 
 ```
 */
+@use "sass:math";
+
 :root {
   --gap: #{$gap};
 
@@ -26,7 +28,7 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 }
 
 .grid {
-  --padding: #{$gap / 2};
+  --padding: #{$gap * 0.5};
   display: flex;
   flex-wrap: wrap;
   margin: calc(-1 * var(--padding));
@@ -35,7 +37,7 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 
 @media (max-width: $md) {
   .grid {
-    --padding: #{$gap-sm / 2};
+    --padding: #{$gap-sm * 0.5};
   }
 }
 
@@ -57,7 +59,7 @@ Available breakpoints are `sm`, `md`, `lg`. Smaller breakpoints set sizes for la
 
     @for $i from 1 to $columns+1 {
       .col--#{nth($breakpoint, 1)}-#{$i} {
-        width: #{(100% * $i) / $columns};
+        width: #{math.div(100% * $i, $columns)};
         padding: var(--padding);
         display: block;
       }

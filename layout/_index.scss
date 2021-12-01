@@ -2,6 +2,8 @@
 # Layout
 */
 
+@use "sass:math";
+
 @import '_grid';
 
 /*
@@ -52,11 +54,11 @@ Standard container used for centering layout, coming in 3 sizes, `.centr-width` 
   margin-right: auto;
 
   &--medium {
-    max-width: $lg * 2 / 3;
+    max-width: math.div($lg * 2, 3);
   }
 
   &--small {
-    max-width: $lg / 2;
+    max-width: $lg * 0.5;
   }
 }
 
@@ -78,7 +80,7 @@ For padding of content.
   padding: $gap 2 * $gap;
 
   @media (max-width: $md) {
-    padding: $gap / 2 $gap;
+    padding: $gap * 0.5 $gap;
   }
 }
 
@@ -184,11 +186,11 @@ Container used mostly for grouping buttons or icons. For positioningof elements 
   display: flex;
 
   &--no-margin {
-    margin: -$gap/2;
+    margin: -$gap*0.5;
   }
 
   &>* {
-    margin: $gap/2;
+    margin: $gap*0.5;
   }
 }
 
