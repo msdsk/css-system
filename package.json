@@ -1,6 +1,6 @@
 {
   "name": "@thisisdeploy/scaffold-css",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "(S)CSS scaffolding for new projects",
   "main": "index.scss",
   "scripts": {
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ThisisDeploy/css-system/issues"
   },
-  "homepage": "https://github.com/ThisisDeploy/css-system#readme"
+  "homepage": "https://github.com/ThisisDeploy/css-system#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.11"
+  }
 }
