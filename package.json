@@ -1,6 +1,6 @@
 {
   "name": "@thisisdeploy/scaffold-css",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "(S)CSS scaffolding for new projects",
   "main": "index.scss",
   "scripts": {
