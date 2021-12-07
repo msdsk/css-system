@@ -6,11 +6,11 @@ The easiest way to restyle the system is by changing following variables.
 ## Colors
 */
 
-$primary: #4661D2;
-$secondary: #2CE6B7;
-$black: #000;
-$gray: #666;
-$white: #fff;
+$primary: #4661D2 !default;
+$secondary: #2CE6B7 !default;
+$black: #000 !default;
+$gray: #666 !default;
+$white: #fff !default;
 
 /*
 If you add more colors than primary/secondary, please also update the following so they will generate text/background classes.
@@ -20,7 +20,7 @@ $colors: ("primary" : $primary,
   "secondary" : $secondary,
   "black" : $black,
   "gray" : $gray,
-  "white" : $white);
+  "white" : $white) !default;
 
 /*
 ## Font
@@ -29,18 +29,18 @@ This system uses [Fluid typography](https://www.smashingmagazine.com/2016/05/flu
 Check [typography](/typography) section to see how it is calculated.
 */
 $font-family: 'Source Sans Pro',
-sans-serif;
-$min-font-size: 16;
-$max-font-size: 23;
+sans-serif !default;
+$min-font-size: 16 !default;
+$max-font-size: 23 !default;
 
 /*
 ## Grid
 
 Basic grid metrics. Note that some paddings are based on gap size.
 */
-$columns: 12;
-$gap: 1rem;
-$gap-sm: .75em;
+$columns: 12 !default;
+$gap: 1rem !default;
+$gap-sm: .75em !default;
 
 /*
 ## Breakpoints
@@ -48,20 +48,20 @@ $gap-sm: .75em;
 You can change the metrics to pixels if you really want but I would adivse against it.
 If you add more breakpoints, don't forget to add it to the following list so it will generate related grid items.
 */
-$md: 40rem;
-$lg: 70rem;
+$md: 40rem !default;
+$lg: 70rem !default;
 $breakpoints: (sm 0em $md $gap-sm,
   md $md $lg $gap,
-  lg $lg 100vh $gap);
+  lg $lg 100vh $gap) !default;
 
 /*
 ## Minor helper variables
 Use those to assure that metrics will be more or less consistent across the board.
 */
 
-$border-radius: .3em;
-$box-shadow: 0 .3em .7em rgba(0, 0, 0, .4);
+$border-radius: .3em !default;
+$box-shadow: 0 .3em .7em rgba(0, 0, 0, .4) !default;
 
-$input-padding-vertical: .7em;
-$input-padding-horizontal: 1.5em;
-$input-padding: $input-padding-vertical $input-padding-horizontal;
+$input-padding-vertical: .7em !default;
+$input-padding-horizontal: 1.5em !default;
+$input-padding: $input-padding-vertical $input-padding-horizontal !default;

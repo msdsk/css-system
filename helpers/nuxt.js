@@ -1,10 +1,10 @@
 /*
-Call this module from nuxt.config.js build.extend to be able to override the variables
+Call this module from nuxt.config.js build.extend to be able to override the variables; now obsolete with !default
 */
 
 const fs = require('fs')
 
-module.exports = function variableOverride(loaders, pathToVariables='assets/scss/_variables.scss') {
+module.exports = function variableOverride(loaders, pathToVariables = 'assets/scss/_variables.scss') {
   loaders.scss.webpackImporter = true
   loaders.scss.sassOptions = {
     importer(url) {
